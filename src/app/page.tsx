@@ -1,65 +1,532 @@
 import Image from "next/image";
+import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 
-export default function Home() {
+export default function Portfolio() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <nav>
+        <div className="nav-logo">Clinton Onaiwu</div>
+        <div className="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+      </nav>
+
+      <main>
+        <section className="hero" id="about">
+          <FadeIn direction="right" delay={0.1}>
+            <div className="hero-content">
+              <span className="hero-eyebrow">Mobile App Developer</span>
+              <h1 className="hero-name">
+                Clinton
+                <br />
+                <span>Onaiwu</span>
+              </h1>
+              <p className="hero-desc">
+                Hi, I am a passionate React Native developer with 3+ years
+                building robust, user-friendly cross-platform mobile apps.
+                Specialising in performance, scalability, and seamless user
+                experiences.
+              </p>
+              <div className="hero-cta">
+                <a
+                  href="mailto:clintonnonaiwu@gmail.com"
+                  className="btn-primary"
+                >
+                  Get in touch
+                </a>
+                <a
+                  href="/Clinton%20Onaiwu%20Resume.pdf"
+                  target="_blank"
+                  className="btn-ghost"
+                  rel="noopener noreferrer"
+                >
+                  Download CV
+                </a>
+                <a
+                  href="https://github.com/clintOnSky"
+                  className="btn-ghost"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </FadeIn>
+          <FadeIn direction="left" delay={0.3}>
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="/profile.jpeg"
+              alt="Clinton Onaiwu"
+              width={160}
+              height={160}
+              className="hero-image"
+              priority
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+          </FadeIn>
+        </section>
+
+        <div className="divider" />
+
+        <section id="skills">
+          <FadeIn>
+            <span className="section-label">Expertise</span>
+            <h2>Skills &amp; Tools</h2>
+            <p className="section-desc">
+              My core tech stack for building production-grade mobile
+              applications.
+            </p>
+          </FadeIn>
+
+          <StaggerContainer delay={0.2}>
+            <div className="skills-grid">
+              <StaggerItem>
+                <div className="skill-card">
+                  <h3>Frameworks</h3>
+                  <div className="tags">
+                    <span className="tag">React Native</span>
+                    <span className="tag">Expo</span>
+                    <span className="tag">Reanimated</span>
+                    <span className="tag">Expo Router</span>
+                  </div>
+                </div>
+              </StaggerItem>
+              <StaggerItem>
+                <div className="skill-card">
+                  <h3>State Management</h3>
+                  <div className="tags">
+                    <span className="tag">TanStack Query</span>
+                    <span className="tag">Zustand</span>
+                    <span className="tag">Redux / RTK</span>
+                    <span className="tag">Context API</span>
+                  </div>
+                </div>
+              </StaggerItem>
+              <StaggerItem>
+                <div className="skill-card">
+                  <h3>Languages</h3>
+                  <div className="tags">
+                    <span className="tag">TypeScript</span>
+                    <span className="tag">JavaScript</span>
+                  </div>
+                </div>
+              </StaggerItem>
+              <StaggerItem>
+                <div className="skill-card">
+                  <h3>Native &amp; Tooling</h3>
+                  <div className="tags">
+                    <span className="tag teal">EAS</span>
+                    <span className="tag teal">MMKV</span>
+                    <span className="tag teal">HealthKit</span>
+                    <span className="tag teal">Google Fit</span>
+                    <span className="tag teal">Stream SDK</span>
+                    <span className="tag teal">CI/CD</span>
+                  </div>
+                </div>
+              </StaggerItem>
+            </div>
+          </StaggerContainer>
+        </section>
+
+        <div className="divider" />
+
+        <section id="experience">
+          <FadeIn>
+            <span className="section-label">Work History</span>
+            <h2>Experience</h2>
+          </FadeIn>
+          <div className="timeline" style={{ marginTop: "2rem" }}>
+            <FadeIn direction="up">
+              <div className="timeline-item">
+                <div className="timeline-meta">
+                  <div className="timeline-date">May 2025 – Present</div>
+                  <div className="timeline-loc">United States · Remote</div>
+                </div>
+                <div>
+                  <div className="timeline-company">Totum LLC.</div>
+                  <div className="timeline-role">
+                    Senior Mobile App Developer (Lead)
+                  </div>
+                  <div className="timeline-type">Full-time</div>
+                  <div className="timeline-body">
+                    Co-leading the mobile development department in a dual-lead
+                    structure to scale features and optimise performance.
+                    Architecting secure, user-centric applications for workout
+                    enthusiasts and fitness studios.
+                  </div>
+                  <div className="metrics">
+                    <span className="metric">
+                      99% deployment frequency improvement via CI/CD
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
+            <FadeIn direction="up">
+              <div className="timeline-item">
+                <div className="timeline-meta">
+                  <div className="timeline-date">Jan 2025 – May 2025</div>
+                  <div className="timeline-loc">Remote</div>
+                </div>
+                <div>
+                  <div className="timeline-company">Belarush</div>
+                  <div className="timeline-role">
+                    Mobile Application Developer
+                  </div>
+                  <div className="timeline-type">Full-time · 5 months</div>
+                  <div className="timeline-body">
+                    Rebuilt the Belachow Vendor and Rider apps for Android and
+                    iOS from the ground up based on new product designs.
+                    Collaborated with backend and frontend teams for seamless
+                    system integration, and maintained the Belachow User app.
+                  </div>
+                  <div className="metrics">
+                    <span className="metric">30% performance improvement</span>
+                    <span className="metric">
+                      25% increase in user retention
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
+            <FadeIn direction="up">
+              <div className="timeline-item">
+                <div className="timeline-meta">
+                  <div className="timeline-date">Sep 2023 – Present</div>
+                  <div className="timeline-loc">Lagos, Nigeria · Remote</div>
+                </div>
+                <div>
+                  <div className="timeline-company">Supplya</div>
+                  <div className="timeline-role">
+                    Founding Mobile App Developer
+                  </div>
+                  <div className="timeline-type">Full-time · 2 yrs 8 mos</div>
+                  <div className="timeline-body">
+                    Solely built and maintained the company&apos;s
+                    cross-platform B2B marketplace app using React Native and
+                    Expo. Integrated third-party APIs and collaborated with
+                    cross-functional teams to deliver reliable releases.
+                  </div>
+                  <div className="metrics">
+                    <span className="metric">15% speed improvement</span>
+                    <span className="metric">
+                      30% boost in user satisfaction
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+
+        <div className="divider" />
+
+        <section id="projects">
+          <FadeIn>
+            <span className="section-label">Work</span>
+            <h2>Featured Projects</h2>
+          </FadeIn>
+          <StaggerContainer delay={0.2}>
+            <div className="projects-grid" style={{ marginTop: "2rem" }}>
+              <StaggerItem>
+                <div className="project-card">
+                  <div className="project-header">
+                    <div>
+                      <div className="project-name">Totum</div>
+                      <div className="project-role">
+                        Senior Mobile App Developer (Lead)
+                      </div>
+                    </div>
+                    <div
+                      className="project-icon"
+                      style={{
+                        overflow: "hidden",
+                        padding: 0,
+                        backgroundColor: "transparent",
+                      }}
+                    >
+                      <Image
+                        src="/totum.jpeg"
+                        alt="Totum"
+                        width={48}
+                        height={48}
+                        style={{
+                          objectFit: "cover",
+                          width: "100%",
+                          height: "100%",
+                        }}
+                      />
+                    </div>
+                  </div>
+                  <div className="project-desc">
+                    All-in-one health and fitness hub consolidating workout
+                    tracking, nutrition, community engagement, and a coach
+                    marketplace with automated biometric syncing.
+                  </div>
+                  <div className="project-stack">
+                    <span>React Native</span>
+                    <span>HealthKit</span>
+                    <span>Google Fit</span>
+                    <span>Stream SDK</span>
+                    <span>TypeScript</span>
+                  </div>
+                  <div className="project-links">
+                    <a
+                      className="project-link"
+                      href="https://apps.apple.com/ng/app/totum/id6476566673"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      App Store
+                    </a>
+                    <a
+                      className="project-link"
+                      href="https://play.google.com/store/apps/details?id=com.totum.coach&hl=en_US"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Play Store
+                    </a>
+                  </div>
+                </div>
+              </StaggerItem>
+
+              <StaggerItem>
+                <div className="project-card">
+                  <div className="project-header">
+                    <div>
+                      <div className="project-name">Belachow</div>
+                      <div className="project-role">
+                        Lead Mobile App Developer
+                      </div>
+                    </div>
+                    <div
+                      className="project-icon"
+                      style={{
+                        overflow: "hidden",
+                        padding: 0,
+                        backgroundColor: "transparent",
+                      }}
+                    >
+                      <Image
+                        src="/belarush.jpeg"
+                        alt="Belachow"
+                        width={48}
+                        height={48}
+                        style={{
+                          objectFit: "cover",
+                          width: "100%",
+                          height: "100%",
+                        }}
+                      />
+                    </div>
+                  </div>
+                  <div className="project-desc">
+                    Three-app frontend strategy for a food delivery ecosystem —
+                    dedicated interfaces for Users, Riders, and Vendors with
+                    real-time server state synchronisation.
+                  </div>
+                  <div className="project-stack">
+                    <span>React Native</span>
+                    <span>Expo</span>
+                    <span>TanStack Query</span>
+                    <span>Reanimated</span>
+                  </div>
+                  <div className="project-links">
+                    <a
+                      className="project-link"
+                      href="https://apps.apple.com/ng/app/belachow/id6741039377"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      User App (iOS)
+                    </a>
+                    <a
+                      className="project-link"
+                      href="https://play.google.com/store/apps/details?id=com.belachow.user&hl=en_US"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      User App (Android)
+                    </a>
+                    <a
+                      className="project-link"
+                      href="https://apps.apple.com/ng/app/bela-restaurant/id1668047783"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Vendor (iOS)
+                    </a>
+                    <a
+                      className="project-link"
+                      href="https://play.google.com/store/apps/details?id=com.belachow.vendor&hl=en_US"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Vendor (Android)
+                    </a>
+                    <a
+                      className="project-link"
+                      href="https://apps.apple.com/ng/app/belachow-rider/id6740879166"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Rider (iOS)
+                    </a>
+                    <a
+                      className="project-link"
+                      href="https://play.google.com/store/apps/details?id=com.belarush.belarush_rider&hl=en_US"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Rider (Android)
+                    </a>
+                  </div>
+                </div>
+              </StaggerItem>
+
+              <StaggerItem>
+                <div className="project-card">
+                  <div className="project-header">
+                    <div>
+                      <div className="project-name">Supplya</div>
+                      <div className="project-role">
+                        Founding Mobile App Developer
+                      </div>
+                    </div>
+                    <div
+                      className="project-icon"
+                      style={{
+                        overflow: "hidden",
+                        padding: 0,
+                        backgroundColor: "transparent",
+                      }}
+                    >
+                      <Image
+                        src="/supplya.jpeg"
+                        alt="Supplya"
+                        width={48}
+                        height={48}
+                        style={{
+                          objectFit: "cover",
+                          width: "100%",
+                          height: "100%",
+                        }}
+                      />
+                    </div>
+                  </div>
+                  <div className="project-desc">
+                    Centralised B2B e-commerce platform with modular
+                    architecture, scalable product management, and centralized
+                    API logic for rapid feature iteration.
+                  </div>
+                  <div className="project-stack">
+                    <span>React Native</span>
+                    <span>Expo</span>
+                    <span>TypeScript</span>
+                    <span>Redux</span>
+                    <span>RTK Query</span>
+                  </div>
+                  <div className="project-links">
+                    <a
+                      className="project-link"
+                      href="https://play.google.com/store/apps?hl=en_US"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Play Store
+                    </a>
+                  </div>
+                </div>
+              </StaggerItem>
+            </div>
+          </StaggerContainer>
+        </section>
+
+        <div className="divider" />
+
+        <section id="education">
+          <FadeIn>
+            <span className="section-label">Background</span>
+            <h2>Education</h2>
+          </FadeIn>
+          <StaggerContainer delay={0.2}>
+            <div className="edu-grid" style={{ marginTop: "2rem" }}>
+              <StaggerItem>
+                <div className="edu-card">
+                  <div>
+                    <div className="edu-degree">
+                      M.Sc. Information Technology
+                    </div>
+                    <div className="edu-school">
+                      National Open University of Nigeria (NOUN)
+                    </div>
+                  </div>
+                  <div className="edu-year">2022 – 2024</div>
+                </div>
+              </StaggerItem>
+              <StaggerItem>
+                <div className="edu-card">
+                  <div>
+                    <div className="edu-degree">B.Sc. Industrial Physics</div>
+                    <div className="edu-school">University of Benin</div>
+                  </div>
+                  <div className="edu-year">2016 – 2021</div>
+                </div>
+              </StaggerItem>
+            </div>
+          </StaggerContainer>
+        </section>
+
+        <div className="divider" />
+
+        <section id="contact">
+          <FadeIn>
+            <span className="section-label">Let&apos;s Talk</span>
+            <div className="contact-card">
+              <h3>Open to opportunities</h3>
+              <p>
+                Whether it&apos;s a full-time role, freelance project, or just a
+                conversation about mobile development — feel free to reach out.
+              </p>
+              <div className="contact-links">
+                <a
+                  href="mailto:clintonnonaiwu@gmail.com"
+                  className="btn-primary"
+                >
+                  Email
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/clinton-onaiwu/"
+                  className="btn-ghost"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href="https://github.com/clintOnSky"
+                  className="btn-ghost"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </FadeIn>
+        </section>
       </main>
-    </div>
+
+      <footer>
+        <FadeIn>Built with care · Clinton Onaiwu · 2025</FadeIn>
+      </footer>
+    </>
   );
 }
