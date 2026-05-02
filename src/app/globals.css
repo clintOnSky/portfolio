@@ -505,6 +505,107 @@ footer {
   margin-top: 4rem;
 }
 
+/* Detail page */
+.detail-page section {
+  max-width: 1100px;
+}
+
+.detail-page .divider {
+  max-width: 1100px;
+}
+
+.detail-back {
+  color: var(--accent);
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.detail-back:hover {
+  opacity: 0.8;
+}
+
+.detail-hero {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 4rem;
+}
+
+.detail-hero-content {
+  flex: 1;
+}
+
+.detail-eyebrow {
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
+.detail-name {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 500;
+  line-height: 1.12;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+
+.detail-desc {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 640px;
+  margin-bottom: 2rem;
+}
+
+.detail-section {
+  padding: 6rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.tech-deep-dive {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tech-card {
+  background: var(--bg2);
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: border-color 0.3s ease;
+}
+
+.tech-card:hover {
+  border-color: var(--border2);
+}
+
+.tech-card h3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.tech-card p {
+  font-size: 15px;
+  color: var(--text);
+  opacity: 0.85;
+  line-height: 1.7;
+}
+
+.project-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .hero {
     flex-direction: column-reverse;
@@ -543,6 +644,19 @@ footer {
     grid-template-columns: 1fr;
     gap: 0.75rem;
   }
+
+  .detail-hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2.5rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .detail-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media (max-width: 600px) {
@@ -554,5 +668,13 @@ footer {
   }
   section {
     padding: 4rem 1.5rem;
+  }
+  .detail-page section,
+  .detail-section {
+    max-width: 100%;
+    padding: 4rem 1.5rem;
+  }
+  .detail-page .divider {
+    max-width: 100%;
   }
 }

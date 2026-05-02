@@ -1,5 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
+import { projects } from "@/data/projects";
 
 export default function Portfolio() {
   return (
@@ -234,217 +236,56 @@ export default function Portfolio() {
           </FadeIn>
           <StaggerContainer delay={0.2}>
             <div className="projects-grid" style={{ marginTop: "2rem" }}>
-              <StaggerItem>
-                <div className="project-card">
-                  <div className="project-header">
-                    <div>
-                      <div className="project-name">Totum</div>
-                      <div className="project-role">
-                        Senior Mobile App Developer (Lead)
+              {projects.map((p) => (
+                <StaggerItem key={p.slug}>
+                  <Link href={`/projects/${p.slug}`} className="project-card-link">
+                    <div className="project-card">
+                      <div className="project-header">
+                        <div>
+                          <div className="project-name">{p.name}</div>
+                          <div className="project-role">{p.role}</div>
+                        </div>
+                        <div
+                          className="project-icon"
+                          style={{
+                            overflow: "hidden",
+                            padding: 0,
+                            backgroundColor: "transparent",
+                          }}
+                        >
+                          <Image
+                            src={p.icon}
+                            alt={p.iconAlt}
+                            width={48}
+                            height={48}
+                            style={{
+                              objectFit: "cover",
+                              width: "100%",
+                              height: "100%",
+                            }}
+                          />
+                        </div>
+                      </div>
+                      <div className="project-desc">{p.description}</div>
+                      <div className="project-stack">
+                        {p.stack.map((t) => (
+                          <span key={t}>{t}</span>
+                        ))}
+                      </div>
+                      <div className="project-links">
+                        {p.links.slice(0, 2).map((l) => (
+                          <span
+                            key={l.label}
+                            className="project-link"
+                          >
+                            {l.label}
+                          </span>
+                        ))}
                       </div>
                     </div>
-                    <div
-                      className="project-icon"
-                      style={{
-                        overflow: "hidden",
-                        padding: 0,
-                        backgroundColor: "transparent",
-                      }}
-                    >
-                      <Image
-                        src="/totum.jpeg"
-                        alt="Totum"
-                        width={48}
-                        height={48}
-                        style={{
-                          objectFit: "cover",
-                          width: "100%",
-                          height: "100%",
-                        }}
-                      />
-                    </div>
-                  </div>
-                  <div className="project-desc">
-                    All-in-one health and fitness hub consolidating workout
-                    tracking, nutrition, community engagement, and a coach
-                    marketplace with automated biometric syncing.
-                  </div>
-                  <div className="project-stack">
-                    <span>React Native</span>
-                    <span>HealthKit</span>
-                    <span>Google Fit</span>
-                    <span>Stream SDK</span>
-                    <span>TypeScript</span>
-                  </div>
-                  <div className="project-links">
-                    <a
-                      className="project-link"
-                      href="https://apps.apple.com/ng/app/totum/id6476566673"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      App Store
-                    </a>
-                    <a
-                      className="project-link"
-                      href="https://play.google.com/store/apps/details?id=com.totum.coach&hl=en_US"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Play Store
-                    </a>
-                  </div>
-                </div>
-              </StaggerItem>
-
-              <StaggerItem>
-                <div className="project-card">
-                  <div className="project-header">
-                    <div>
-                      <div className="project-name">Belachow</div>
-                      <div className="project-role">
-                        Lead Mobile App Developer
-                      </div>
-                    </div>
-                    <div
-                      className="project-icon"
-                      style={{
-                        overflow: "hidden",
-                        padding: 0,
-                        backgroundColor: "transparent",
-                      }}
-                    >
-                      <Image
-                        src="/belarush.jpeg"
-                        alt="Belachow"
-                        width={48}
-                        height={48}
-                        style={{
-                          objectFit: "cover",
-                          width: "100%",
-                          height: "100%",
-                        }}
-                      />
-                    </div>
-                  </div>
-                  <div className="project-desc">
-                    Three-app frontend strategy for a food delivery ecosystem —
-                    dedicated interfaces for Users, Riders, and Vendors with
-                    real-time server state synchronisation.
-                  </div>
-                  <div className="project-stack">
-                    <span>React Native</span>
-                    <span>Expo</span>
-                    <span>TanStack Query</span>
-                    <span>Reanimated</span>
-                  </div>
-                  <div className="project-links">
-                    <a
-                      className="project-link"
-                      href="https://apps.apple.com/ng/app/belachow/id6741039377"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      User App (iOS)
-                    </a>
-                    <a
-                      className="project-link"
-                      href="https://play.google.com/store/apps/details?id=com.belachow.user&hl=en_US"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      User App (Android)
-                    </a>
-                    <a
-                      className="project-link"
-                      href="https://apps.apple.com/ng/app/bela-restaurant/id1668047783"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Vendor (iOS)
-                    </a>
-                    <a
-                      className="project-link"
-                      href="https://play.google.com/store/apps/details?id=com.belachow.vendor&hl=en_US"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Vendor (Android)
-                    </a>
-                    <a
-                      className="project-link"
-                      href="https://apps.apple.com/ng/app/belachow-rider/id6740879166"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Rider (iOS)
-                    </a>
-                    <a
-                      className="project-link"
-                      href="https://play.google.com/store/apps/details?id=com.belarush.belarush_rider&hl=en_US"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Rider (Android)
-                    </a>
-                  </div>
-                </div>
-              </StaggerItem>
-
-              <StaggerItem>
-                <div className="project-card">
-                  <div className="project-header">
-                    <div>
-                      <div className="project-name">Supplya</div>
-                      <div className="project-role">
-                        Founding Mobile App Developer
-                      </div>
-                    </div>
-                    <div
-                      className="project-icon"
-                      style={{
-                        overflow: "hidden",
-                        padding: 0,
-                        backgroundColor: "transparent",
-                      }}
-                    >
-                      <Image
-                        src="/supplya.jpeg"
-                        alt="Supplya"
-                        width={48}
-                        height={48}
-                        style={{
-                          objectFit: "cover",
-                          width: "100%",
-                          height: "100%",
-                        }}
-                      />
-                    </div>
-                  </div>
-                  <div className="project-desc">
-                    Centralised B2B e-commerce platform with modular
-                    architecture, scalable product management, and centralized
-                    API logic for rapid feature iteration.
-                  </div>
-                  <div className="project-stack">
-                    <span>React Native</span>
-                    <span>Expo</span>
-                    <span>TypeScript</span>
-                    <span>Redux</span>
-                    <span>RTK Query</span>
-                  </div>
-                  <div className="project-links">
-                    <a
-                      className="project-link"
-                      href="https://play.google.com/store/apps?hl=en_US"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Play Store
-                    </a>
-                  </div>
-                </div>
-              </StaggerItem>
+                  </Link>
+                </StaggerItem>
+              ))}
             </div>
           </StaggerContainer>
         </section>
