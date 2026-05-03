@@ -27,7 +27,7 @@ export const projects: Project[] = [
     slug: "totum",
     name: "Totum",
     role: "Senior Mobile App Developer (Lead)",
-    icon: "/totum.jpeg",
+    icon: "/totum-icon.png",
     iconAlt: "Totum",
     description:
       "All-in-one health and fitness hub consolidating workout tracking, nutrition, community engagement, and a coach marketplace with automated biometric syncing.",
@@ -53,34 +53,29 @@ export const projects: Project[] = [
       "Totum is a health and fitness platform combining workout tracking, nutrition logging, social features, video calling, and a coach marketplace. The app syncs biometric data from wearables including Apple Watch, Garmin, Oura, Whoop, and Fitbit. As co-lead of the mobile team, I co-architected the app using Expo Router, Zustand for client state, and TanStack Query for server state.",
     techDeepDive: [
       {
-        title: "Wearable Health Data Integration",
+        title: "Biometric Data Aggregation",
         description:
-          "Integrated Spike SDK to aggregate steps, heart rate, sleep, and calorie data from Apple HealthKit, Google Health Connect, and six major wearable brands. Background delivery keeps the dashboard's caloric rings and performance metrics in sync without draining battery.",
+          "Engineered a unified health data layer via Spike SDK aggregating Apple HealthKit, Google Health Connect, and six wearable brands — synchronizing steps, heart rate, sleep, and calorie metrics in the background while minimizing battery drain.",
       },
       {
-        title: "State Management",
+        title: "Dual-State Architecture",
         description:
-          "Split between Zustand with Immer for client state (auth, modals, navigation) and TanStack Query for server state with automatic caching and invalidation across 44 query keys. Axios client with interceptors handles token refresh and offline detection.",
+          "Architected a hybrid state management system leveraging Zustand with Immer for ephemeral client state and TanStack Query across 44 query keys for server state — eliminating stale UI and reducing redundant network calls through intelligent cache invalidation.",
       },
       {
-        title: "Real-Time Chat & Video",
+        title: "Real-Time Communication",
         description:
-          "Built 1:1 and group messaging with Stream Chat, plus WebRTC video calling via Stream Video SDK with VOIP push notifications, native CallKit screens on iOS, and background call handling on Android.",
+          "Orchestrated 1:1 and group messaging with Stream Chat SDK and WebRTC video calling via Stream Video SDK — integrating VOIP push notifications, native CallKit call screens, and background call handling for uninterrupted coaching sessions.",
       },
       {
-        title: "Navigation & Deep Linking",
+        title: "Payment & Commerce Engine",
         description:
-          "File-based routing with Expo Router across nested bottom tabs, top tabs, and push stacks. Auth guards via protected route groups, custom transitions, and deep linking with the `totum://` scheme and associated domains.",
-      },
-      {
-        title: "E-Commerce & Payments",
-        description:
-          "Marketplace with product categories, coach storefronts, bundles, and cart. Stripe handles in-app purchases and subscriptions with Apple Pay and Google Pay support.",
+          "Engineered a full marketplace with Stripe Payment Sheet integration supporting Apple Pay and Google Pay — handling subscription lifecycle, invoice reconciliation, and transaction history with idempotent payment flows.",
       },
       {
         title: "CI/CD Pipeline",
         description:
-          "EAS Build profiles for development, preview, and production with environment-specific app variants. OTA updates and automated store submissions via EAS Submit, achieving a 99% improvement in deployment frequency.",
+          "Configured EAS Build profiles across three environment-specific app variants and automated store submissions via EAS Submit — reducing deployment friction by 99% and enabling zero-touch OTA updates tied to app version.",
       },
     ],
   },
@@ -108,22 +103,17 @@ export const projects: Project[] = [
       {
         title: "Real-Time Order Synchronization",
         description:
-          "Architected a WebSocket-based event system that keeps all three apps in sync. Order state transitions (placed → accepted → preparing → picked up → delivered) propagate across User, Vendor, and Rider apps within 200ms. Implemented optimistic UI updates with rollback on WebSocket disconnect, ensuring the UI stays responsive even on unstable networks.",
+          "Architected a WebSocket event system propagating order state transitions across three independent apps within 200ms — implementing optimistic UI with automatic rollback on disconnect to maintain responsiveness on unstable networks.",
       },
       {
-        title: "TanStack Query Server State Layer",
+        title: "Server State Optimization",
         description:
-          "Replaced Redux-based API logic with TanStack Query for intelligent caching, automatic background refetching, and optimistic mutations. Configured stale-while-revalidate strategies for menu data, rider locations, and vendor availability. Custom query invalidation patterns ensure data consistency across the three apps without excessive network requests.",
+          "Migrated from Redux to TanStack Query with stale-while-revalidate caching strategies — reducing network overhead while ensuring menu data, rider locations, and vendor availability remain consistent across the ecosystem.",
       },
       {
-        title: "Live Location Tracking",
+        title: "Cross-App Codebase Strategy",
         description:
-          "Built a rider tracking system using background location updates with configurable accuracy modes. Implemented geofencing for order pickup/dropoff zones and used MapKit/Google Maps SDK for route visualization. Optimized location polling to balance accuracy with battery consumption using native location services with smart interval adjustments.",
-      },
-      {
-        title: "Three-App Codebase Strategy",
-        description:
-          "Maintained shared component libraries and business logic across all three apps using internal packages. Extracted common types, API clients, and UI primitives into a monorepo-style structure within the Expo workspace. This reduced code duplication by approximately 60% and ensured consistent behavior across the ecosystem.",
+          "Extracted shared component libraries, API clients, and type definitions into a monorepo-style structure — reducing code duplication by 60% and enforcing behavioral consistency across User, Rider, and Vendor applications.",
       },
     ],
   },
@@ -131,7 +121,7 @@ export const projects: Project[] = [
     slug: "sonder-business",
     name: "Sonder Business",
     role: "Mobile App Developer",
-    icon: "/supplya.jpeg",
+    icon: "/sonder.png",
     iconAlt: "Sonder Business",
     description:
       "B2B event management and content analytics platform for organizers to track event performance, manage content, and collaborate with teams.",
@@ -156,27 +146,22 @@ export const projects: Project[] = [
       {
         title: "Supabase Backend Integration",
         description:
-          "Used Supabase for authentication, database, storage, and real-time subscriptions. Google Sign-In and Apple Authentication handle OAuth with session persistence. Axios complements Supabase for file uploads to storage with progress tracking.",
+          "Orchestrated a full backend integration leveraging Supabase Auth, database, storage, and real-time subscriptions — implementing Google and Apple OAuth with secure session persistence and automatic token refresh.",
       },
       {
-        title: "Analytics Dashboard",
+        title: "Persistent Upload Queue",
         description:
-          "Built interactive dashboards with bar charts and pie charts showing views, shares, likes, demographic breakdowns by age and gender, and highest-ranking content. Charts support filtering by day, week, and month with real-time data refresh.",
-      },
-      {
-        title: "File Upload Queue",
-        description:
-          "Developed a persistent upload queue using React Context and expo-file-system that supports pause, resume, cancel, and retry. Upload state persists across app restarts via AsyncStorage, allowing users to close the app and resume uploads later.",
+          "Engineered a fault-tolerant file upload system via React Context and expo-file-system supporting pause, resume, cancel, and retry — persisting upload state across app restarts through AsyncStorage to prevent data loss on interruption.",
       },
       {
         title: "Role-Based Access Control",
         description:
-          "Implemented granular permissions system with format `resource.action` (e.g., `events.create`, `analytics.view_dashboard`). Permission guards conditionally render UI components, and the API layer enforces server-side access checks.",
+          "Implemented a granular permission system with UI-level guards and server-side enforcement — ensuring data isolation between admin, creator, and manager roles across multi-tenant business accounts.",
       },
       {
-        title: "Event & Content Management",
+        title: "Analytics Dashboard",
         description:
-          "Full CRUD for events with access code gating, media upload with thumbnail generation, and category-based organization. Events are grouped by year with dual-column layouts and detailed content analytics per event.",
+          "Built interactive data visualizations with configurable bar and pie charts tracking views, shares, and demographic breakdowns — supporting dynamic time-range filtering with efficient data aggregation queries.",
       },
     ],
   },
@@ -195,24 +180,24 @@ export const projects: Project[] = [
       "Supplya is a B2B e-commerce marketplace connecting suppliers with retailers and businesses. As the founding mobile developer, I built the entire Android and iOS app from scratch, designing a modular architecture that could scale as the product evolved. The platform handles product catalog browsing, bulk ordering, inventory management, and real-time order tracking — all optimized for business users who need efficiency over consumer-grade engagement patterns.",
     techDeepDive: [
       {
-        title: "Modular Architecture",
+        title: "Modular Feature Architecture",
         description:
-          "Designed a feature-based architecture with clear separation between UI, business logic, and data layers. Each domain (catalog, orders, inventory, payments) lives in its own module with explicit APIs, enabling independent development and testing. This structure allowed rapid iteration on new features without introducing regressions in stable areas.",
+          "Designed a domain-based architecture with strict separation between UI, business logic, and data layers — enabling parallel feature development without introducing regressions across catalog, orders, inventory, and payment modules.",
       },
       {
-        title: "RTK Query API Layer",
+        title: "Resilient API Layer",
         description:
-          "Built a comprehensive API integration layer using RTK Query with automatic cache invalidation, pagination support, and prefetching for product catalogs. Implemented custom baseQuery with retry logic, exponential backoff, and offline queue for unreliable network conditions common in the target market. Tag-based cache invalidation ensures product availability and pricing stay fresh without over-fetching.",
+          "Engineered an RTK Query integration with automatic cache invalidation, pagination, and prefetching — implementing custom baseQuery with exponential backoff and an offline request queue to handle unreliable network conditions.",
       },
       {
         title: "Bulk Ordering System",
         description:
-          "Designed a specialized ordering flow for B2B users who frequently reorder large quantities. Built a quick-order form with barcode scanning, CSV import for bulk uploads, and saved order templates. Implemented debounced search with server-side filtering across thousands of SKUs, using FlatList with windowed rendering for smooth scrolling through large catalogs.",
+          "Architected a high-volume ordering flow with barcode scanning, CSV import, and saved order templates — optimizing catalog browsing through debounced server-side search and windowed FlatList rendering across thousands of SKUs.",
       },
       {
         title: "Performance Optimization",
         description:
-          "Profiled and eliminated JS thread bottlenecks across the app. Migrated heavy computations (price calculations, tax logic) to Web Workers where possible. Implemented image optimization with progressive loading, lazy-loaded below-the-fold content, and reduced initial bundle size through tree-shaking and dynamic imports for rarely-used features.",
+          "Profiled and eliminated JS thread bottlenecks through memoization, native driver animations, and dynamic imports — reducing initial bundle size and improving app launch time by 15%.",
       },
     ],
   },
