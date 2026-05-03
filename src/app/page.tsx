@@ -69,7 +69,7 @@ export default function Portfolio() {
           <FadeIn direction="left" delay={0.3}>
             <div className="hero-image-wrapper">
               <Image
-                src="/profile.jpeg"
+                src="/new-profile.jpeg"
                 alt="Clinton Onaiwu"
                 width={160}
                 height={160}
@@ -153,20 +153,40 @@ export default function Portfolio() {
             <FadeIn direction="up">
               <div className="timeline-item">
                 <div className="timeline-meta">
-                  <div className="timeline-date">May 2025 – Present</div>
+                  <div className="timeline-date">Jul 2025 – Present</div>
+                  <div className="timeline-loc">Nigeria · Remote</div>
+                </div>
+                <div>
+                  <div className="timeline-company">Staymello</div>
+                  <div className="timeline-role">
+                    Senior Mobile App Developer
+                  </div>
+                  <div className="timeline-type">Full-time · 11 mos</div>
+                  <div className="timeline-body">
+                    Building cross-platform mobile applications using React Native and TypeScript, delivering performant and user-centric experiences.
+                  </div>
+                  <div className="metrics">
+                    <span className="metric">React Native</span>
+                    <span className="metric">TypeScript</span>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
+            <FadeIn direction="up">
+              <div className="timeline-item">
+                <div className="timeline-meta">
+                  <div className="timeline-date">May 2025 – Apr 2026</div>
                   <div className="timeline-loc">United States · Remote</div>
                 </div>
                 <div>
                   <div className="timeline-company">Totum LLC.</div>
                   <div className="timeline-role">
-                    Senior Mobile App Developer (Lead)
+                    Senior Mobile App Developer
                   </div>
-                  <div className="timeline-type">Full-time</div>
+                  <div className="timeline-type">Full-time · 1 yr</div>
                   <div className="timeline-body">
-                    Co-leading the mobile development department in a dual-lead
-                    structure to scale features and optimise performance.
-                    Architecting secure, user-centric applications for workout
-                    enthusiasts and fitness studios.
+                    Jointly leading the mobile development department, managing a dual-lead structure to scale application features and optimize performance. Architecting robust, secure, and user-centric mobile applications for both workout enthusiasts and studios. Implementing CI/CD pipelines that improved deployment frequency by 99%.
                   </div>
                   <div className="metrics">
                     <span className="metric">
@@ -208,20 +228,17 @@ export default function Portfolio() {
             <FadeIn direction="up">
               <div className="timeline-item">
                 <div className="timeline-meta">
-                  <div className="timeline-date">Sep 2023 – Present</div>
-                  <div className="timeline-loc">Lagos, Nigeria · Remote</div>
+                  <div className="timeline-date">Sep 2023 – Apr 2026</div>
+                  <div className="timeline-loc">Lagos State, Nigeria · Remote</div>
                 </div>
                 <div>
-                  <div className="timeline-company">Supplya</div>
+                  <div className="timeline-company">Supplya | Seamless B2B Marketplace</div>
                   <div className="timeline-role">
                     Founding Mobile App Developer
                   </div>
                   <div className="timeline-type">Full-time · 2 yrs 8 mos</div>
                   <div className="timeline-body">
-                    Solely built and maintained the company&apos;s
-                    cross-platform B2B marketplace app using React Native and
-                    Expo. Integrated third-party APIs and collaborated with
-                    cross-functional teams to deliver reliable releases.
+                    Solely responsible for building and maintaining the company&apos;s cross-platform mobile app using React Native and Expo. Optimized functionality, improving speed by 15% and user satisfaction by 30%. Integrated third-party APIs and collaborated with cross-functional teams to deliver reliable, high-quality releases.
                   </div>
                   <div className="metrics">
                     <span className="metric">15% speed improvement</span>
@@ -246,16 +263,17 @@ export default function Portfolio() {
             <div className="projects-grid" style={{ marginTop: "2rem" }}>
               {projects.map((p) => (
                 <StaggerItem key={p.slug}>
-                  <Link href={`/projects/${p.slug}`} className="project-card-link">
+                  <Link
+                    href={`/projects/${p.slug}`}
+                    className="project-card-link"
+                  >
                     <GlowCard className="project-card">
                       <div className="project-header">
                         <div>
                           <div className="project-name">{p.name}</div>
                           <div className="project-role">{p.role}</div>
                         </div>
-                        <div
-                          className="project-icon"
-                        >
+                        <div className="project-icon">
                           <Image
                             src={p.icon}
                             alt={p.iconAlt}
@@ -277,10 +295,7 @@ export default function Portfolio() {
                       </div>
                       <div className="project-links">
                         {p.links.slice(0, 2).map((l) => (
-                          <span
-                            key={l.label}
-                            className="project-link"
-                          >
+                          <span key={l.label} className="project-link">
                             {l.label}
                           </span>
                         ))}
