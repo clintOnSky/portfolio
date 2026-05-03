@@ -2,10 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/FadeIn";
 import { projects } from "@/data/projects";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
+import { ScrollProgress } from "@/components/ScrollProgress";
+import { MagneticButton } from "@/components/MagneticButton";
+import { GlowCard } from "@/components/GlowCard";
 
 export default function Portfolio() {
   return (
     <>
+      <ScrollProgress />
+      <AnimatedBackground />
       <nav>
         <div className="nav-logo">Clinton Onaiwu</div>
         <div className="nav-links">
@@ -35,40 +41,42 @@ export default function Portfolio() {
                 experiences.
               </p>
               <div className="hero-cta">
-                <a
+                <MagneticButton
                   href="mailto:clintonnonaiwu@gmail.com"
-                  className="btn-primary"
+                  variant="primary"
                 >
                   Get in touch
-                </a>
-                <a
+                </MagneticButton>
+                <MagneticButton
                   href="/Clinton%20Onaiwu%20Resume.pdf"
                   target="_blank"
-                  className="btn-ghost"
+                  variant="ghost"
                   rel="noopener noreferrer"
                 >
                   Download CV
-                </a>
-                <a
+                </MagneticButton>
+                <MagneticButton
                   href="https://github.com/clintOnSky"
-                  className="btn-ghost"
+                  variant="ghost"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   GitHub
-                </a>
+                </MagneticButton>
               </div>
             </div>
           </FadeIn>
           <FadeIn direction="left" delay={0.3}>
-            <Image
-              src="/profile.jpeg"
-              alt="Clinton Onaiwu"
-              width={160}
-              height={160}
-              className="hero-image"
-              priority
-            />
+            <div className="hero-image-wrapper">
+              <Image
+                src="/profile.jpeg"
+                alt="Clinton Onaiwu"
+                width={160}
+                height={160}
+                className="hero-image"
+                priority
+              />
+            </div>
           </FadeIn>
         </section>
 
@@ -87,7 +95,7 @@ export default function Portfolio() {
           <StaggerContainer delay={0.2}>
             <div className="skills-grid">
               <StaggerItem>
-                <div className="skill-card">
+                <GlowCard className="skill-card">
                   <h3>Frameworks</h3>
                   <div className="tags">
                     <span className="tag">React Native</span>
@@ -95,10 +103,10 @@ export default function Portfolio() {
                     <span className="tag">Reanimated</span>
                     <span className="tag">Expo Router</span>
                   </div>
-                </div>
+                </GlowCard>
               </StaggerItem>
               <StaggerItem>
-                <div className="skill-card">
+                <GlowCard className="skill-card">
                   <h3>State Management</h3>
                   <div className="tags">
                     <span className="tag">TanStack Query</span>
@@ -106,19 +114,19 @@ export default function Portfolio() {
                     <span className="tag">Redux / RTK</span>
                     <span className="tag">Context API</span>
                   </div>
-                </div>
+                </GlowCard>
               </StaggerItem>
               <StaggerItem>
-                <div className="skill-card">
+                <GlowCard className="skill-card">
                   <h3>Languages</h3>
                   <div className="tags">
                     <span className="tag">TypeScript</span>
                     <span className="tag">JavaScript</span>
                   </div>
-                </div>
+                </GlowCard>
               </StaggerItem>
               <StaggerItem>
-                <div className="skill-card">
+                <GlowCard className="skill-card">
                   <h3>Native &amp; Tooling</h3>
                   <div className="tags">
                     <span className="tag teal">EAS</span>
@@ -128,7 +136,7 @@ export default function Portfolio() {
                     <span className="tag teal">Stream SDK</span>
                     <span className="tag teal">CI/CD</span>
                   </div>
-                </div>
+                </GlowCard>
               </StaggerItem>
             </div>
           </StaggerContainer>
@@ -239,7 +247,7 @@ export default function Portfolio() {
               {projects.map((p) => (
                 <StaggerItem key={p.slug}>
                   <Link href={`/projects/${p.slug}`} className="project-card-link">
-                    <div className="project-card">
+                    <GlowCard className="project-card">
                       <div className="project-header">
                         <div>
                           <div className="project-name">{p.name}</div>
@@ -247,11 +255,6 @@ export default function Portfolio() {
                         </div>
                         <div
                           className="project-icon"
-                          style={{
-                            overflow: "hidden",
-                            padding: 0,
-                            backgroundColor: "transparent",
-                          }}
                         >
                           <Image
                             src={p.icon}
@@ -282,7 +285,7 @@ export default function Portfolio() {
                           </span>
                         ))}
                       </div>
-                    </div>
+                    </GlowCard>
                   </Link>
                 </StaggerItem>
               ))}
@@ -300,7 +303,7 @@ export default function Portfolio() {
           <StaggerContainer delay={0.2}>
             <div className="edu-grid" style={{ marginTop: "2rem" }}>
               <StaggerItem>
-                <div className="edu-card">
+                <GlowCard className="edu-card">
                   <div>
                     <div className="edu-degree">
                       M.Sc. Information Technology
@@ -310,16 +313,16 @@ export default function Portfolio() {
                     </div>
                   </div>
                   <div className="edu-year">2022 – 2024</div>
-                </div>
+                </GlowCard>
               </StaggerItem>
               <StaggerItem>
-                <div className="edu-card">
+                <GlowCard className="edu-card">
                   <div>
                     <div className="edu-degree">B.Sc. Industrial Physics</div>
                     <div className="edu-school">University of Benin</div>
                   </div>
                   <div className="edu-year">2016 – 2021</div>
-                </div>
+                </GlowCard>
               </StaggerItem>
             </div>
           </StaggerContainer>
@@ -330,37 +333,37 @@ export default function Portfolio() {
         <section id="contact">
           <FadeIn>
             <span className="section-label">Let&apos;s Talk</span>
-            <div className="contact-card">
+            <GlowCard className="contact-card">
               <h3>Open to opportunities</h3>
               <p>
                 Whether it&apos;s a full-time role, freelance project, or just a
                 conversation about mobile development — feel free to reach out.
               </p>
               <div className="contact-links">
-                <a
+                <MagneticButton
                   href="mailto:clintonnonaiwu@gmail.com"
-                  className="btn-primary"
+                  variant="primary"
                 >
                   Email
-                </a>
-                <a
+                </MagneticButton>
+                <MagneticButton
                   href="https://www.linkedin.com/in/clinton-onaiwu/"
-                  className="btn-ghost"
+                  variant="ghost"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   LinkedIn
-                </a>
-                <a
+                </MagneticButton>
+                <MagneticButton
                   href="https://github.com/clintOnSky"
-                  className="btn-ghost"
+                  variant="ghost"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   GitHub
-                </a>
+                </MagneticButton>
               </div>
-            </div>
+            </GlowCard>
           </FadeIn>
         </section>
       </main>

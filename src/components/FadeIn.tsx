@@ -26,9 +26,9 @@ export function FadeIn({
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{
-        duration: 0.6,
+        duration: 0.7,
         delay,
-        ease: [0.21, 0.47, 0.32, 0.98],
+        ease: [0.25, 0.1, 0.25, 1],
       }}
     >
       {children}
@@ -53,7 +53,7 @@ export function StaggerContainer({
         visible: {
           opacity: 1,
           transition: {
-            staggerChildren: 0.1,
+            staggerChildren: 0.08,
             delayChildren: delay,
           },
         },
@@ -74,7 +74,7 @@ export function StaggerItem({ children }: { children: ReactNode }) {
           y: 0,
           transition: {
             duration: 0.5,
-            ease: [0.21, 0.47, 0.32, 0.98],
+            ease: [0.25, 0.1, 0.25, 1],
           },
         },
       }}

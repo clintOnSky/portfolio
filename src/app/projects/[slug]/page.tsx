@@ -135,7 +135,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             <div className="contact-card">
               <h3>Interested in working together?</h3>
               <p>
-                Whether it's a full-time role, freelance project, or just a
+                Whether it&apos;s a full-time role, freelance project, or just a
                 conversation about mobile development — feel free to reach out.
               </p>
               <div className="contact-links">
